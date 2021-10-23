@@ -40,7 +40,7 @@ public class Sort {
         }
         // then the low element is lower than the element in pivotIdx
         // the high element is higher than the element in pivotIdx
-        // repeat in left arr and right arr
+        // repeat the above steps in left arr and right arr if low < high
         if (low < high) {
             quickSortInternal(arr, low, low - 1);
             quickSortInternal(arr, low + 1, high);
