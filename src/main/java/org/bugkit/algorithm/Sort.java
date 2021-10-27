@@ -1,13 +1,19 @@
+package org.bugkit.algorithm;
+
 import java.util.Arrays;
 
 /**
- * Sort array with asc order
+ * main.java.org.bugkit.algorithm.Sort array with asc order
  *
  * @author bennetty74
  * @since 2021.10.23
  */
 public class Sort {
 
+    /**
+     * Select sort
+     * @param arr Array to be sorted
+     */
     public void selectSort(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             int min = arr[i], minIdx = i;
@@ -23,6 +29,10 @@ public class Sort {
         }
     }
 
+    /**
+     * Quick sort
+     * @param arr Array to be sorted
+     */
     public void quickSort(int[] arr) {
         quickSortInternal(arr, 0, arr.length - 1);
     }
@@ -62,15 +72,15 @@ public class Sort {
         arr2 = new int[]{2, 4, 1, 3, 9, 8, 7, 5, 6};
         sort.quickSort(arr1);
         sort.quickSort(arr2);
-        System.out.println("Sort quickSort [1] result is: " + Arrays.toString(arr1));
-        System.out.println("Sort quickSort [2,4,1,3,9,8,7,5,6] result is: " + Arrays.toString(arr2));
+        System.out.println("main.java.org.bugkit.algorithm.Sort quickSort [1] result is: " + Arrays.toString(arr1));
+        System.out.println("main.java.org.bugkit.algorithm.Sort quickSort [2,4,1,3,9,8,7,5,6] result is: " + Arrays.toString(arr2));
 
         arr1 = new int[]{1};
         arr2 = new int[]{2, 4, 1, 3, 9, 8, 7, 5, 6};
         sort.selectSort(arr1);
         sort.selectSort(arr2);
-        System.out.println("Sort selectSort [1] result is: " + Arrays.toString(arr1));
-        System.out.println("Sort selectSort [2,4,1,3,9,8,7,5,6] result is: " + Arrays.toString(arr2));
+        System.out.println("main.java.org.bugkit.algorithm.Sort selectSort [1] result is: " + Arrays.toString(arr1));
+        System.out.println("main.java.org.bugkit.algorithm.Sort selectSort [2,4,1,3,9,8,7,5,6] result is: " + Arrays.toString(arr2));
 
     }
 }

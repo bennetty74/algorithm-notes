@@ -1,3 +1,5 @@
+package org.bugkit.algorithm;
+
 /**
  * @author bennetty74
  * @since 2021.10.23
