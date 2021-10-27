@@ -1,3 +1,5 @@
+package org.bugkit.structure;
+
 import java.util.Objects;
 
 /**
@@ -5,7 +7,7 @@ import java.util.Objects;
  * @author bennetty74
  * @since 2021.10.24
  */
-public class HashMap <K,V>{
+public class HashMap <K,V> implements Map<K,V>{
 
     private Entry<K,V>[] entries;
     private final double loadFactor = 0.75d;
@@ -21,6 +23,11 @@ public class HashMap <K,V>{
     public HashMap(int capacity) {
         this.capacity = capacity;
         entries = new Entry[capacity];
+    }
+
+    @Override
+    public boolean contains(K key) {
+        return false;
     }
 
     public boolean put(K key, V value) {
