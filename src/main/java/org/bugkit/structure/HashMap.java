@@ -110,7 +110,7 @@ public class HashMap <K,V> implements Map<K,V>{
                 }
             }
         }
-        sb.append("}");
+        sb.replace(sb.length() - 1, sb.length(), "").append("}");
         return sb.toString();
     }
 
