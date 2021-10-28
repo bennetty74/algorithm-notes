@@ -1,5 +1,6 @@
 package org.bugkit.structure;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -27,6 +28,17 @@ public class HashMap <K,V> implements Map<K,V>{
 
     @Override
     public boolean contains(K key) {
+        int idx = getIndex(key);
+        if (entries[idx] == null) {
+            return false;
+        }
+        Entry<K, V> entry = entries[idx];
+        while (entry != null) {
+            if (entry.key.equals(key)) {
+                return true;
+            }
+            entry = entry.next;
+        }
         return false;
     }
 
@@ -52,8 +64,14 @@ public class HashMap <K,V> implements Map<K,V>{
     }
 
     private void rehash() {
-        // TODO rehash
-        System.out.println("TODO REHASH");
+        capacity = 2 * capacity;
+        Entry<K, V>[] oldEntries = Arrays.copyOf(this.entries, capacity);
+        entries = new Entry[capacity];
+        for (Entry<K, V> oldEntry : oldEntries) {
+            if (oldEntry != null) {
+                put(oldEntry.key, oldEntry.value);
+            }
+        }
     }
 
     public V get(K key) {
@@ -79,6 +97,23 @@ public class HashMap <K,V> implements Map<K,V>{
         return key.hashCode() % capacity;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("HashMap {");
+        for (int i = 0; i < capacity; i++) {
+            if (entries[i] != null) {
+                Entry<K, V> entry = entries[i];
+                while (entry != null) {
+                    sb.append(entry.key).append("=").append(entry.value).append(",");
+                    entry = entry.next;
+                }
+            }
+        }
+        sb.append("}");
+        return sb.toString();
+    }
+
     private static class Entry<K,V> {
         K key;
         V value;
@@ -91,21 +126,5 @@ public class HashMap <K,V> implements Map<K,V>{
         Entry<K,V> next;
     }
 
-    public static void main(String[] args) {
-        HashMap<String, String> map = new HashMap<>(6);
-        map.put("one", "1");
-        map.put("two", "2");
-        map.put("three", "3");
-        map.put("four", "4");
-        map.put("five", "5");
-        map.put("six", "6");
-        map.put("seven", "7");
-        System.out.println("Get one: " + map.get("one"));
-        System.out.println("Get two: " + map.get("two"));
-        System.out.println("Get three: " + map.get("three"));
-        System.out.println("Get four: " + map.get("four"));
-        System.out.println("Get five: " + map.get("five"));
-        System.out.println("Get six: " + map.get("six"));
-        System.out.println("Get seven: " + map.get("seven"));
-    }
+
 }
