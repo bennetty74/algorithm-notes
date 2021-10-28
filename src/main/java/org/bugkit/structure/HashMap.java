@@ -100,7 +100,7 @@ public class HashMap <K,V> implements Map<K,V>{
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("HashMap {");
+        sb.append("HashMap { ");
         for (int i = 0; i < capacity; i++) {
             if (entries[i] != null) {
                 Entry<K, V> entry = entries[i];
@@ -110,7 +110,7 @@ public class HashMap <K,V> implements Map<K,V>{
                 }
             }
         }
-        sb.replace(sb.length() - 1, sb.length(), "").append("}");
+        sb.replace(sb.length() - 1, sb.length(), "").append(" }");
         return sb.toString();
     }
 
