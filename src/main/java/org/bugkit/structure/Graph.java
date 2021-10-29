@@ -35,8 +35,8 @@ public class Graph<E, W> {
 
     private static class Node<E, W> {
 
-        private E e;
-        private List<Edge<E, W>> edges;
+        private final E e;
+        private final List<Edge<E, W>> edges;
 
         public Node(E e) {
             this.e = e;
@@ -70,11 +70,11 @@ public class Graph<E, W> {
         /**
          * weight
          */
-        private W w;
+        private final W w;
         /**
          * the neighbor
          */
-        private Node<E, W> node;
+        private final Node<E, W> node;
 
         public Edge(E e, W w) {
             this.w = w;
