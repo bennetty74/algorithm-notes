@@ -15,19 +15,19 @@ class LinkedListTest {
     private List<Integer> list;
 
     @BeforeEach
-    public void setup() {
+    public void setupTest() {
         list = new LinkedList<>();
         assertTrue(list.add(1));
         assertTrue(list.add(2));
     }
 
     @AfterEach
-    public void print() {
+    public void printTest() {
         System.out.println(list);
     }
 
     @Test
-    void get() {
+    void getTest() {
         assertTrue(list.add(3));
         assertEquals(1, list.get(0)) ;
         assertEquals(2, list.get(1));
@@ -36,31 +36,31 @@ class LinkedListTest {
 
 
     @Test
-    void removeByElement() {
+    void removeByElementTest() {
         assertTrue(list.remove(new Integer(1)));
         assertEquals(1, list.size());
     }
 
     @Test
-    void addWithIndex() {
+    void addWithIndexTest() {
         assertTrue(list.add(3, 2));
         assertEquals(3,list.size());
     }
 
     @Test
-    void add() {
+    void addTest() {
         assertTrue(list.add(3));
         assertEquals(3,list.size());
     }
 
     @Test
-    void removeByIndex() {
+    void removeByIndexTest() {
         assertEquals(1,list.remove(0));
         assertEquals(1,list.size());
     }
 
     @Test
-    void contains() {
+    void containsTest() {
         assertTrue(list.contains(1));
     }
 

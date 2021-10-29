@@ -4,9 +4,7 @@ package org.bugkit.structure;
  * @author bugkit
  * @since 2021.10.27
  */
-public class LinkedList<E> implements List<E>, Queue<E>, Stack<E> {
-
-    private int size = 0;
+public class LinkedList<E> extends AbstractList<E> implements List<E>, Queue<E>, Stack<E> {
 
     private Node<E> head;
     private Node<E> tail;
@@ -16,15 +14,6 @@ public class LinkedList<E> implements List<E>, Queue<E>, Stack<E> {
         tail = head = null;
     }
 
-    @Override
-    public boolean isEmpty() {
-        return size() == 0;
-    }
-
-    @Override
-    public int size() {
-        return size;
-    }
 
     @Override
     public boolean add(E e) {

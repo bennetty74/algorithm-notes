@@ -15,20 +15,20 @@ class StackTest {
     private Stack<Integer> stack;
 
     @BeforeEach
-    public void setup() {
+    public void setupTest() {
         stack = new LinkedList<>();
         assertTrue(stack.push(1));
         assertTrue(stack.push(2));
     }
 
     @Test
-    void push() {
+    void pushTest() {
         assertTrue(stack.push(3));
         assertEquals(3,stack.size());
     }
 
     @Test
-    void pop() {
+    void popTest() {
         assertEquals(2, stack.pop());
         assertEquals(1, stack.pop());
         assertEquals(0,stack.size());

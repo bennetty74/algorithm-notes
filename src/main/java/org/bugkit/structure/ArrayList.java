@@ -15,6 +15,11 @@ public class ArrayList<E> extends AbstractList<E> implements List<E> {
         data = (E[]) new Object[capacity];
     }
 
+    public ArrayList(int capacity) {
+        this.capacity = capacity;
+        data = (E[]) new Object[capacity];
+    }
+
     @Override
     public E get(int i) {
         if (i >= size) {
