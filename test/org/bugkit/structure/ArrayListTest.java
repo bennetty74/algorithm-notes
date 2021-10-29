@@ -8,17 +8,17 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author bugkit
- * @since 2021.10.27
+ * @since 2021.10.29
  */
-class ListTest {
+class ArrayListTest {
 
     private List<Integer> list;
 
     @BeforeEach
     public void setup() {
-        list = new LinkedList<>();
+        list = new ArrayList<>();
         assertTrue(list.add(1));
-        assertTrue(list.add(2));
+        assertTrue(list.add(3));
     }
 
     @AfterEach
@@ -28,41 +28,39 @@ class ListTest {
 
     @Test
     void get() {
-        assertTrue(list.add(3));
-        assertEquals(1, list.get(0)) ;
-        assertEquals(2, list.get(1));
-        assertEquals(3, list.get(2));
+        assertEquals(1,list.get(0));
+        assertEquals(3,list.get(1));
     }
 
-
     @Test
-    void removeByElement() {
-        assertTrue(list.remove(new Integer(1)));
+    void removeElement() {
+        assertTrue(list.remove(new Integer(3)));
         assertEquals(1, list.size());
     }
 
     @Test
     void addWithIndex() {
-        assertTrue(list.add(3, 2));
-        assertEquals(3,list.size());
+        assertTrue(list.add(0, 0));
+        assertTrue(list.add(2, 2));
+        assertTrue(list.add(4, 4));
+        assertEquals(5, list.size());
     }
 
     @Test
     void add() {
-        assertTrue(list.add(3));
+        assertTrue(list.add(4));
+        assertEquals(4, list.get(2));
         assertEquals(3,list.size());
     }
 
     @Test
-    void removeByIndex() {
-        assertEquals(1,list.remove(0));
-        assertEquals(1,list.size());
+    void removeWithIndex() {
+        assertEquals(1, list.remove(0));
+        assertEquals(1, list.size());
     }
 
     @Test
     void contains() {
         assertTrue(list.contains(1));
     }
-
-
 }
