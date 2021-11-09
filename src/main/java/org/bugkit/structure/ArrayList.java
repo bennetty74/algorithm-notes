@@ -1,6 +1,7 @@
 package org.bugkit.structure;
 
 /**
+ * @param <E> Type of element
  * @author bugkit
  * @since 2021.10.27
  */
@@ -34,9 +35,7 @@ public class ArrayList<E> extends AbstractList<E> implements List<E> {
             throw new IndexOutOfBoundsException("Index " + i + " is out of range " + size);
         }
         E e = data[i];
-        for (int j = i ; j < size; j++) {
-            data[j] = data[j + 1];
-        }
+        System.arraycopy(data, i + 1, data, i, size - i);
         size--;
         return e;
     }
@@ -49,9 +48,8 @@ public class ArrayList<E> extends AbstractList<E> implements List<E> {
         if (size == capacity - 1) {
             resize();
         }
-        for (int j = size; j >= i; j--) {
-            data[j + 1] = data[j];
-        }
+        if (size + 1 - i >= 0)
+            System.arraycopy(data, i, data, i + 1, size + 1 - i);
         data[i] = e;
         size++;
         return true;
