@@ -1,4 +1,4 @@
-package java.org.bugkit.structure;
+package org.bugkit.structure;
 
 import org.bugkit.structure.ArrayList;
 import org.bugkit.structure.List;

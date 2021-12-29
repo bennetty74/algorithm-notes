@@ -1,4 +1,4 @@
-package java.org.bugkit.structure;
+package org.bugkit.structure;
 
 import org.bugkit.structure.LinkedList;
 import org.bugkit.structure.Queue;

@@ -1,4 +1,4 @@
-package java.org.bugkit.structure;
+package org.bugkit.structure;
 
 import org.bugkit.structure.HashMap;
 import org.bugkit.structure.Map;
