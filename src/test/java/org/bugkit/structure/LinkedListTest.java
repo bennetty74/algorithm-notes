@@ -1,5 +1,7 @@
-package org.bugkit.structure;
+package java.org.bugkit.structure;
 
+import org.bugkit.structure.LinkedList;
+import org.bugkit.structure.List;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

@@ -1,5 +1,7 @@
-package org.bugkit.structure;
+package java.org.bugkit.structure;
 
+import org.bugkit.structure.HashMap;
+import org.bugkit.structure.Map;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
