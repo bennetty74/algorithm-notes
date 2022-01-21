@@ -97,6 +97,7 @@ public class LinkedList<E> extends AbstractList<E> implements List<E>, Queue<E>,
         }
         if (i == 0) {
             node.next = head;
+            head.prev = node;
             node.prev = null;
             head = node;
         } else {
@@ -108,7 +109,7 @@ public class LinkedList<E> extends AbstractList<E> implements List<E>, Queue<E>,
             node.prev = tmp;
         }
         size++;
-        return false;
+        return true;
     }
 
     @Override
